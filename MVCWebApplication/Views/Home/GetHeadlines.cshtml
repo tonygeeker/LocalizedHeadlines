@@ -1,0 +1,58 @@
+﻿@model IEnumerable<NewsAPI.Models.Article>
+
+@{
+    ViewBag.Title = "Headlines";
+}
+
+<h2>Welcome to your news feed of top headlines</h2>
+
+<div>
+    The dropdown for filtering by country should be here.
+ </div>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.PublishedAt)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Url)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishedAt)
+        </td>
+        
+    </tr>
+}
+
+</table>
